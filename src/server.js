@@ -5,7 +5,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-require('./controllers/AuthController')(app);
-require('./controllers/ProjectController')(app);
+require('./app/controllers/index')(app);
 
-app.listen(3000);
+app.listen(3000, () => {
+  console.log('Server started.');
+});
